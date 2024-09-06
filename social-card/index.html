@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="flip-box">
-      <div class="card-front">
+    <div class="flip-box" id="flip-box">
+      <div class="card-front" id="card-front">
         <div class="info">
           <img src="./img/yo.png" alt="me" />
           <div class="data">
@@ -59,11 +59,21 @@
             </li>
           </ul>
         </div>
+        <button type="button" class="btn-rotation-card" id="btn-rotation-card">
+          Girar
+        </button>
       </div>
-      <div class="card-back">
-        <img src="./img/sergio.png" alt="sergio">
-        </div>
+      <div class="card-back" id="card-back">
+        <img src="./img/sergio.png" alt="sergio" />
+        <button
+          type="button"
+          class="btn-rotation-card-back"
+          id="btn-rotation-card-back"
+        >
+          Girar
+        </button>
       </div>
     </div>
+    <script src="./js/rotationButton.js"></script>
   </body>
 </html>
