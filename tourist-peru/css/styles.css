@@ -2,4 +2,69 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-image: linear-gradient(
+    to right,
+    #ff0000,
+    #ff3d66,
+    #ff75ad,
+    #ffa6e0,
+    #f8d1fc,
+    #f8d1fc,
+    #f8d1fc,
+    #f8d1fc,
+    #ffa6e0,
+    #ff75ad,
+    #ff3d66,
+    #ff0000
+  );
+}
+h1 {
+  margin: 2em;
+  text-decoration: underline;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+ul {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 2em;
+}
+
+img {
+  width: 200px;
+  height: 250px;
+  margin: 3em;
+  border-radius: 15px;
+}
+
+.costa,
+.sierra,
+.selva {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+
+  h2 {
+    text-decoration: underline;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    img {
+      width: 300px;
+      height: 150px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+hr {
+  border: 3px solid black;
 }
