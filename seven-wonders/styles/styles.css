@@ -1,0 +1,59 @@
+.roboto-condensed-<uniquifier > {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.content-wrapper {
+  width: 100vw;
+  height: auto;
+
+  .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      margin: 1.5em;
+      font-weight: 900;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    background: #ffa201;
+    background: linear-gradient(225deg, #ffa201, #01c4ff);
+
+    table {
+      border: 3px solid black;
+      border-collapse: collapse;
+
+      margin: 2em 5em;
+
+      td,
+      th {
+        padding: 0.5em;
+        border: 3px solid black;
+      }
+
+      td {
+        img {
+          width: 300px;
+          height: 200px;
+        }
+      }
+    }
+  }
+}
