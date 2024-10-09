@@ -7,7 +7,12 @@ export const Home = () => {
   const inputRef = useRef();
   const [taskList, setTaskList] = useState([]);
 
-  const oldTasks = JSON.parse(localStorage.getItem("task"));
+  const LOCAL_KEY_DATA = "tasksData";
+
+  const setDataLocalStorage = (data = []) =>
+    localStorage.setItem(LOCAL_KEY_DATA, JSON.stringify(data));
+
+  const oldTasks = JSON.parse(localStorage.getItem(LOCAL_KEY_DATA));
 
   useEffect(() => {
     if (oldTasks) {
@@ -26,13 +31,20 @@ export const Home = () => {
       },
     ];
 
-    localStorage.setItem("task", JSON.stringify(newData));
+    setDataLocalStorage(newData);
     setTaskList(newData);
   };
 
   const deleteTasks = () => {
     localStorage.clear();
     setTaskList([]);
+  };
+
+  const taskRemove = (taskId) => {
+    const newData = taskList.filter((task) => task.id !== taskId);
+
+    setDataLocalStorage(newData);
+    setTaskList(newData);
   };
 
   return (
@@ -66,7 +78,7 @@ export const Home = () => {
                 {`${index + 1}. ${task.task}`}
                 <div className="options">
                   <button>Editar</button>
-                  <button>Eliminar</button>
+                  <button onClick={() => taskRemove(task.id)}>Eliminar</button>
                 </div>
               </li>
             );
