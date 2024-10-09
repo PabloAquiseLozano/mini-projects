@@ -1,66 +1,122 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { TaskTable } from "./TaskTable.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export const Home = () => {
-	const [task, setTask] = useState([]);
-	const [input, setInput] = useState("");
+  const inputRef = useRef();
+  const [taskList, setTaskList] = useState([]);
 
-	const inputRealTime = (valor) => {
-		setInput(valor.target.value);
-	};
+  const oldTasks = JSON.parse(localStorage.getItem("task"));
 
-	const addData = () => {
-		const data = {
-			task: input,
-		};
+  useEffect(() => {
+    if (oldTasks) {
+      setTaskList(oldTasks);
+    }
+  }, []);
 
-		setTask([...task, data]);
-	};
+  const addData = () => {
+    const inputValue = inputRef?.current?.value || "";
 
-	return (
-		<Container>
-			<div className="title">
-				<h1>TO DO LIST</h1>
-			</div>
-			<div className="task-section">
-				<div className="task-input">
-					<input
-						type="text"
-						value={input}
-						placeholder="Ingrese su tarea aquí"
-						onChange={inputRealTime}
-					/>
-					<button onClick={addData}>
-						<FontAwesomeIcon icon={faPlus} /> Añadir Tarea
-					</button>
-				</div>
-				<div className="table">
-					<TaskTable task={task} />
-				</div>
-			</div>
-		</Container>
-	);
+    const newData = [
+      ...(oldTasks || []),
+      {
+        id: new Date(),
+        task: inputValue,
+      },
+    ];
+
+    localStorage.setItem("task", JSON.stringify(newData));
+    setTaskList(newData);
+  };
+
+  const deleteTasks = () => {
+    localStorage.clear();
+    setTaskList([]);
+  };
+
+  return (
+    <Container>
+      <div className="title">
+        <h1>TO DO LIST</h1>
+      </div>
+      <div className="task-section">
+        <div className="task-input">
+          <input
+            type="text"
+            placeholder="Ingrese su tarea aquí"
+            ref={inputRef}
+          />
+          <button onClick={addData}>
+            <FontAwesomeIcon icon={faPlus} /> Añadir Tarea
+          </button>
+        </div>
+        <div className="task-delete">
+          <button onClick={deleteTasks}>Limpiar las tareas</button>
+        </div>
+      </div>
+      <div className="task-lists">
+        <span>
+          <h3>LISTA DE TAREAS A DESARROLLAR</h3>
+        </span>
+        <ul>
+          {taskList.map((task, index) => {
+            return (
+              <li>
+                {`${index + 1}. ${task.task}`}
+                <div className="options">
+                  <button>Editar</button>
+                  <button>Eliminar</button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </Container>
+  );
 };
 
 const Container = styled.div`
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 
-	.title {
-		padding: 4em;
-		background: aquamarine;
-	}
+  .title {
+    padding: 4em;
+    background: aquamarine;
+  }
 
-	.task-section {
-		padding: 4em;
-		display: grid;
-		gap: 2em;
-	}
+  .task-section {
+    padding: 4em;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+  .task-lists {
+    line-height: 3em;
+    margin: auto;
+    width: 60%;
+    text-align: left;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        padding: 0.5em;
+        display: flex;
+        justify-content: space-between;
+        .options {
+          display: flex;
+          gap: 0.5em;
+          button {
+            padding: 0.5em;
+          }
+        }
+      }
+    }
+  }
 `;
