@@ -1,65 +1,66 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TaskTable } from "./TaskTable.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export const Home = () => {
-  const [task, setTask] = useState("");
-  const taskList = [];
-  const addTask = () => {
-    setTask(document.querySelector("#task-value").value);
+	const [task, setTask] = useState([]);
+	const [input, setInput] = useState("");
 
-    const data = [
-      {
-        task: task,
-      },
-    ];
+	const inputRealTime = (valor) => {
+		setInput(valor.target.value);
+	};
 
-    taskList.concat(data);
-    console.log(taskList);
-  };
+	const addData = () => {
+		const data = {
+			task: input,
+		};
 
-  return (
-    <Container>
-      <div className="title">
-        <h1>TO DO LIST</h1>
-      </div>
-      <div className="task-section">
-        <div className="task-input">
-          <input
-            type="text"
-            id="task-value"
-            placeholder="Ingrese su tarea aquí"
-          />
-          <button onClick={addTask}>
-            <FontAwesomeIcon icon={faPlus} /> Añadir Tarea
-          </button>
-        </div>
-        <div className="table">
-          <TaskTable task={task} />
-        </div>
-      </div>
-    </Container>
-  );
+		setTask([...task, data]);
+	};
+
+	return (
+		<Container>
+			<div className="title">
+				<h1>TO DO LIST</h1>
+			</div>
+			<div className="task-section">
+				<div className="task-input">
+					<input
+						type="text"
+						value={input}
+						placeholder="Ingrese su tarea aquí"
+						onChange={inputRealTime}
+					/>
+					<button onClick={addData}>
+						<FontAwesomeIcon icon={faPlus} /> Añadir Tarea
+					</button>
+				</div>
+				<div className="table">
+					<TaskTable task={task} />
+				</div>
+			</div>
+		</Container>
+	);
 };
 
 const Container = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
 
-  .title {
-    padding: 4em;
-    background: aquamarine;
-  }
+	.title {
+		padding: 4em;
+		background: aquamarine;
+	}
 
-  .task-section {
-    padding: 4em;
-    display: grid;
-    gap: 2em;
-  }
+	.task-section {
+		padding: 4em;
+		display: grid;
+		gap: 2em;
+	}
 `;
