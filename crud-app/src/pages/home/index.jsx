@@ -42,10 +42,11 @@ export const Home = () => {
 
   const taskRemove = (taskId) => {
     const newData = taskList.filter((task) => task.id !== taskId);
-
     setDataLocalStorage(newData);
     setTaskList(newData);
   };
+
+  const updateTasks = (taskId) => {};
 
   return (
     <Container>
