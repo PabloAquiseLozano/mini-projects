@@ -1,12 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPenToSquare,
-  faPlus,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "antd";
+import { TaskListSection } from "./TaskListSection.jsx";
 
 export const Home = () => {
   const updatedTaskRef = useRef(null);
@@ -50,11 +47,11 @@ export const Home = () => {
     setTaskList(newData);
   };
 
-  const editTask = (taskId) => {
-    setIsOpenModal(true);
-    const task = taskList.find((task) => task.id === taskId);
-    setTask(task);
-  };
+  // const editTask = (taskId) => {
+  //   setIsOpenModal(true);
+  //   const task = taskList.find((task) => task.id === taskId);
+  //   setTask(task);
+  // };
 
   const updateTask = () => {
     setIsOpenModal(false);
@@ -80,11 +77,11 @@ export const Home = () => {
     setTaskList([]);
   };
 
-  const taskRemove = (taskId) => {
-    const newData = taskList.filter((task) => task.id !== taskId);
-    setDataLocalStorage(newData);
-    setTaskList(newData);
-  };
+  // const taskRemove = (taskId) => {
+  //   const newData = taskList.filter((task) => task.id !== taskId);
+  //   setDataLocalStorage(newData);
+  //   setTaskList(newData);
+  // };
 
   return (
     <Container>
@@ -106,31 +103,11 @@ export const Home = () => {
           <button onClick={deleteTasks}>Limpiar tareas</button>
         </div>
       </div>
-      <div className="task-lists">
-        <span>
-          <h3>LISTA DE TAREAS A DESARROLLAR</h3>
-        </span>
-        <ul>
-          {taskList.map((task, index) => {
-            return (
-              <li key={index}>
-                {`${index + 1}. ${task.task}`}
-                <div className="options">
-                  <button className="edit" onClick={() => editTask(task.id)}>
-                    <FontAwesomeIcon icon={faPenToSquare} />
-                  </button>
-                  <button
-                    className="delete"
-                    onClick={() => taskRemove(task.id)}
-                  >
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <TaskListSection
+        taskList={taskList}
+        setTaskList={setTaskList}
+        setDataLocalStorage={setDataLocalStorage}
+      />
       <Modal
         closable
         okText={"Guardar"}
@@ -198,53 +175,6 @@ const Container = styled.div`
     button {
       width: 15em;
       height: 3em;
-    }
-  }
-
-  .task-lists {
-    line-height: 3em;
-    width: 60%;
-    text-align: left;
-
-    ul {
-      list-style-type: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5em;
-
-      li {
-        font-size: 1em;
-        font-weight: 700;
-        border-radius: 20px;
-        border: 3px solid black;
-
-        padding: 0.8em;
-        display: flex;
-        justify-content: space-between;
-        .options {
-          display: flex;
-          gap: 0.5em;
-
-          .delete {
-            background-color: red;
-          }
-
-          .edit {
-            background-color: cornflowerblue;
-          }
-
-          .edit,
-          .delete {
-            cursor: pointer;
-          }
-
-          button {
-            border-radius: 20px;
-            border: none;
-            padding: 0.5em;
-          }
-        }
-      }
     }
   }
 
