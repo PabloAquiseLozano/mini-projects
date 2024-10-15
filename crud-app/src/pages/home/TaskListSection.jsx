@@ -12,12 +12,12 @@ export const TaskListSection = ({
   index,
   setTaskList,
   setDataLocalStorage,
+  taskRemove,
 }) => {
   const handleDragEnd = (event) => {
     const { active, over } = event;
-
-    const oldIndex = taskList.findIndex((task) => task.id === active.id);
-    const newIndex = taskList.findIndex((task) => task.id === over.id);
+    const oldIndex = taskList.findIndex((task) => task.id === active?.id);
+    const newIndex = taskList.findIndex((task) => task.id === over?.id);
 
     const newOrder = arrayMove(taskList, oldIndex, newIndex);
     setTaskList(newOrder);
@@ -33,8 +33,15 @@ export const TaskListSection = ({
           items={taskList}
           strategy={verticalListSortingStrategy}
         >
-          {taskList.map((task, index) => (
-            <Task task={task} key={index} />
+          {taskList.map((task) => (
+            <Task
+              task={task}
+              key={task.id}
+              taskList={taskList}
+              setTaskList={setTaskList}
+              setDataLocalStorage={setDataLocalStorage}
+              taskRemove={taskRemove}
+            />
           ))}
         </SortableContext>
       </div>

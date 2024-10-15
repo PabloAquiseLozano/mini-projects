@@ -77,11 +77,11 @@ export const Home = () => {
     setTaskList([]);
   };
 
-  // const taskRemove = (taskId) => {
-  //   const newData = taskList.filter((task) => task.id !== taskId);
-  //   setDataLocalStorage(newData);
-  //   setTaskList(newData);
-  // };
+  const taskRemove = (taskId) => {
+    const newData = taskList.filter((task) => task.id !== taskId);
+    setDataLocalStorage(newData);
+    setTaskList(newData);
+  };
 
   return (
     <Container>
@@ -104,9 +104,11 @@ export const Home = () => {
         </div>
       </div>
       <TaskListSection
+        task={task}
         taskList={taskList}
         setTaskList={setTaskList}
         setDataLocalStorage={setDataLocalStorage}
+        taskRemove={taskRemove}
       />
       <Modal
         closable
