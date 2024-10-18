@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cambio Climático</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      img {
+        width: 30em;
+        height: 10em;
+      }
+      body {
+        background-color: #f4f4f4;
+      }
+      .hero {
+        background-image: url("https://oggrac.unmsm.edu.pe/wp-content/uploads/2023/01/cambio-climatico-causas-consecuencias-2.jpg");
+        background-size: contain;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+      }
+      .section {
+        margin: 40px 0;
+        padding: 20px;
+        border: 2px solid #007bff;
+        border-radius: 8px;
+        background-color: white;
+        display: grid;
+        place-items: center;
+      }
+      .contorno {
+        color: white;
+        text-shadow: -1px -1px 0 #007bff, 1px -1px 0 #007bff, -1px 1px 0 #007bff,
+          1px 1px 0 #007bff;
+      }
+      .img-fluid {
+        border-radius: 8px;
+      }
+      .section child {
+        margin: 40px 0;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+      }
+      .nino-img {
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: auto;
+      }
+      .nino-text {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+      }
+
+      .video-section {
+        border-radius: 20px;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+
+        video {
+          position: relative;
+          z-index: 200;
+        }
+        p {
+          -webkit-text-stroke-width: 2px;
+          -webkit-text-stroke-color: black;
+          margin-top: 5em;
+          color: #f4f4f4;
+          font-size: 2.5em;
+          font-weight: 800;
+          position: absolute;
+          z-index: 500;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <h1 class="contorno">Cambio Climático</h1>
+        <p>Un desafío global que requiere nuestra atención y acción.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="section">
+        <h2 class="contorno">¿Qué es el Cambio Climático?</h2>
+        <p>
+          El cambio climático se refiere a las variaciones en el clima de la
+          Tierra a lo largo del tiempo, principalmente causadas por la actividad
+          humana, como la quema de combustibles fósiles, la deforestación y la
+          agricultura intensiva.
+        </p>
+        <img
+          src="https://www.un.org/sites/un2.un.org/files/2021/08/feeling-the-heat.jpg"
+          alt="Contaminación"
+          class="img-fluid"
+        />
+      </div>
+
+      <div class="section">
+        <h2 class="contorno">Consecuencias</h2>
+        <ul>
+          <li>Aumento de la temperatura global.</li>
+          <li>Desglaciación de los polos y aumento del nivel del mar.</li>
+          <li>
+            Eventos climáticos extremos como huracanes, sequías e inundaciones.
+          </li>
+          <li>Pérdida de biodiversidad y hábitats naturales.</li>
+        </ul>
+        <img
+          src="https://www.altonivel.com.mx/wp-content/uploads/2024/06/importacia-de-agua-jpg.webp"
+          alt="Cambio climático"
+          class="img-fluid"
+        />
+      </div>
+
+      <div class="section video">
+        <h2 class="contorno">¿Qué podemos hacer?</h2>
+        <p>
+          Es fundamental tomar acciones individuales y colectivas para mitigar
+          el cambio climático:
+        </p>
+        <ol>
+          <li>Reducir el uso de plásticos.</li>
+          <li>Fomentar el uso de energías renovables.</li>
+          <li>Promover el reciclaje y la sostenibilidad.</li>
+          <li>
+            Apoyar políticas ambientales y organizaciones que luchan contra el
+            cambio climático.
+          </li>
+        </ol>
+        <div class="video-section">
+          <video
+            autoplay
+            muted
+            loop
+            src="./resources/videos/Spot Agüita_ ¡Pon la basura en su lugar!.mp4"
+          ></video>
+
+          <p>Concientízate!!</p>
+        </div>
+      </div>
+
+      <div class="section child">
+        <h2 class="contorno nino-text">El Fenómeno de El Niño</h2>
+        <p class="nino-text">
+          El fenómeno de El Niño es un evento climático que se caracteriza por
+          el calentamiento anómalo de las aguas del océano Pacífico. Este
+          fenómeno afecta patrones climáticos en todo el mundo, provocando
+          sequías, inundaciones y cambios en la biodiversidad marina.
+        </p>
+        <img
+          src="https://elbuho.pe/wp-content/uploads/2023/09/fenomeno-el-nino-el-norte-peru.jpg"
+          alt="El Niño"
+          class="img-fluid nino-img"
+        />
+      </div>
+    </div>
+
+    <footer class="text-center p-3 bg-dark text-light">
+      <p>&copy; 2024 Conciencia Climática. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
