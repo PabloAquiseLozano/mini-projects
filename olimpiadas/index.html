@@ -1,142 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-		/>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="./estilos/styles.css" />
-		<title>Olimpiadas 2024</title>
-	</head>
-	<body>
-		<div class="header">
-			<ul>
-				<li><i class="fa-solid fa-fire-flame-curved"></i></li>
-				<li>OLIMPIADAS - FRANCIA 2024</li>
-				<li><i class="fa-solid fa-fire-flame-curved"></i></li>
-			</ul>
-		</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./estilos/styles.css" />
+    <title>Olimpiadas 2024</title>
+    <style>
+      .option {
+        font-size: 0.6em;
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <ul>
+        <a href="./paises.html" class="option">Países participantes</a>
+        <li><i class="fa-solid fa-fire-flame-curved"></i></li>
+        <li>OLIMPIADAS - FRANCIA 2024</li>
+        <li><i class="fa-solid fa-fire-flame-curved"></i></li>
+        <a href="./medallero.html" class="option">Medallero</a>
+      </ul>
+    </div>
 
-		<div
-			id="carouselExampleControls"
-			class="carousel slide"
-			data-bs-ride="carousel"
-		>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img
-						src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/08/01/17224937380692.jpg"
-						class="d-block w-100 h-100"
-						alt="Tiro"
-					/>
-				</div>
-				<div class="carousel-item">
-					<img
-						src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/6057277721001/b0dcd4dd-4644-487d-9fd0-c6a0b7a78704/212bdf4a-432c-4536-ab26-f5fe3b7b8588/1280x720/match/image.jpg"
-						class="d-block w-100 h-100"
-						alt="Nadal"
-					/>
-				</div>
-				<div class="carousel-item">
-					<img
-						src="https://phantom-marca.unidadeditorial.es/fbaded91fd52953e37c2de2eede3380d/crop/0x0/2045x1363/resize/828/f/jpg/assets/multimedia/imagenes/2024/07/27/17220728002831.jpg"
-						class="d-block w-100 h-100"
-						alt="Formula1"
-					/>
-				</div>
-			</div>
-			<button
-				class="carousel-control-prev"
-				type="button"
-				data-bs-target="#carouselExampleControls"
-				data-bs-slide="prev"
-			>
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button
-				class="carousel-control-next"
-				type="button"
-				data-bs-target="#carouselExampleControls"
-				data-bs-slide="next"
-			>
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/08/01/17224937380692.jpg"
+            class="d-block w-100 h-100"
+            alt="Tiro"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/6057277721001/b0dcd4dd-4644-487d-9fd0-c6a0b7a78704/212bdf4a-432c-4536-ab26-f5fe3b7b8588/1280x720/match/image.jpg"
+            class="d-block w-100 h-100"
+            alt="Nadal"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://phantom-marca.unidadeditorial.es/fbaded91fd52953e37c2de2eede3380d/crop/0x0/2045x1363/resize/828/f/jpg/assets/multimedia/imagenes/2024/07/27/17220728002831.jpg"
+            class="d-block w-100 h-100"
+            alt="Formula1"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-		<div class="participantes">
-			<ul>
-				<li>
-					<div class="atleta">
-						<div class="img">
-							<img
-								src="https://imagenes.primicias.ec/files/exploded_image_400_600/uploads/2024/08/03/66aee48be6211.jpeg"
-								alt=""
-							/>
-						</div>
-						<div class="description">
-							<p>
-								Con tres medallas de oro y una plata, Simone Biles, la más
-								condecorada de la historia, dejó definitivamente atrás lo
-								ocurrido hace tres años en Tokio, cuando un bloqueo mental la
-								dejaba perdida en el aire.
-							</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="atleta">
-						<div class="img">
-							<img
-								src="https://imagenes.primicias.ec/files/exploded_image_400_600/files/fp/uploads/2024/08/11/66b8cde0b468e.r_d.1340-874-3003.jpeg"
-								alt=""
-							/>
-						</div>
-						<div class="description">
-							<p>
-								El nadador francés Léon Marchand llegó a los Juegos rodeado de
-								altas expectativas, y el joven de 22 años cumplió con estilo,
-								sumando cuatro oros individuales y desatando la "Marchandmanía".
-							</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="atleta">
-						<div class="img">
-							<img
-								src="https://imagenes.primicias.ec/files/exploded_image_400_600/files/fp/uploads/2024/08/04/66afe4fc4e3c0.r_d.403-218-9239.jpeg"
-								alt=""
-							/>
-						</div>
-						<div class="description">
-							<p>
-								Lyles llegó a París hablando de buscar cimentar su legado como
-								el legítimo heredero de Usain Bolt. El estadounidense ganó en
-								unos 100 metros que serán recordados por toda la eternidad.
-							</p>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="footer">
-			<p>Juegos abiertos de par en par - “Ouvrons grand les jeux”</p>
-		</div>
+    <div class="participantes">
+      <ul>
+        <li>
+          <div class="atleta">
+            <div class="img">
+              <img
+                src="https://imagenes.primicias.ec/files/exploded_image_400_600/uploads/2024/08/03/66aee48be6211.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="description">
+              <p>
+                Con tres medallas de oro y una plata, Simone Biles, la más
+                condecorada de la historia, dejó definitivamente atrás lo
+                ocurrido hace tres años en Tokio, cuando un bloqueo mental la
+                dejaba perdida en el aire.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="atleta">
+            <div class="img">
+              <img
+                src="https://imagenes.primicias.ec/files/exploded_image_400_600/files/fp/uploads/2024/08/11/66b8cde0b468e.r_d.1340-874-3003.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="description">
+              <p>
+                El nadador francés Léon Marchand llegó a los Juegos rodeado de
+                altas expectativas, y el joven de 22 años cumplió con estilo,
+                sumando cuatro oros individuales y desatando la "Marchandmanía".
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="atleta">
+            <div class="img">
+              <img
+                src="https://imagenes.primicias.ec/files/exploded_image_400_600/files/fp/uploads/2024/08/04/66afe4fc4e3c0.r_d.403-218-9239.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="description">
+              <p>
+                Lyles llegó a París hablando de buscar cimentar su legado como
+                el legítimo heredero de Usain Bolt. El estadounidense ganó en
+                unos 100 metros que serán recordados por toda la eternidad.
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer">
+      <p>Juegos abiertos de par en par - “Ouvrons grand les jeux”</p>
+    </div>
 
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-			crossorigin="anonymous"
-		></script>
-	</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
