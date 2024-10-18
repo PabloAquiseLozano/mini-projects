@@ -79,6 +79,18 @@
           z-index: 500;
         }
       }
+      .table-container {
+        margin: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .country-image {
+        width: 50px;
+        height: auto;
+        border-radius: 4px;
+      }
     </style>
   </head>
   <body>
@@ -163,6 +175,106 @@
           class="img-fluid nino-img"
         />
       </div>
+    </div>
+
+    <div class="table-container">
+      <h2 class="text-center">
+        Países Más Afectados por el Fenómeno de El Niño
+      </h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Pais</th>
+            <th>Descripción del Impacto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img
+                src="https://flagcdn.com/w320/pe.png"
+                alt="Perú"
+                class="country-image"
+              />
+              Perú
+            </td>
+            <td>
+              Inundaciones y deslizamientos de tierra, afectando la agricultura
+              y la infraestructura.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://flagcdn.com/w320/cl.png"
+                alt="Chile"
+                class="country-image"
+              />
+              Chile
+            </td>
+            <td>
+              Sequías prolongadas que afectan la disponibilidad de agua y la
+              agricultura.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/1200px-Flag_of_Colombia.svg.png"
+                alt="Colombia"
+                class="country-image"
+              />
+              Colombia
+            </td>
+            <td>
+              Aumento de lluvias intensas que causan inundaciones y problemas de
+              salud.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://flagcdn.com/w320/id.png"
+                alt="Indonesia"
+                class="country-image"
+              />
+              Indonesia
+            </td>
+            <td>
+              Aumento de temperaturas y sequías que impactan la producción
+              agrícola.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Australia.svg/1200px-Flag_of_Australia.svg.png"
+                alt="Australia"
+                class="country-image"
+              />
+              Australia
+            </td>
+            <td>
+              Sequías severas y olas de calor que afectan los ecosistemas y la
+              agricultura.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+                alt="Estados Unidos"
+                class="country-image"
+              />
+              Estados Unidos
+            </td>
+            <td>
+              Alteraciones en los patrones de lluvia y aumento de huracanes en
+              la costa este.
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <footer class="text-center p-3 bg-dark text-light">
